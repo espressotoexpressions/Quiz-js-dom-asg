@@ -12,44 +12,50 @@ let resetColorsBtn = document.getElementById("resetColorsBtn");
 
 changeColorsBtn.addEventListener('click',function(event){
 
-let boxNumberTxt=document.getElementById("boxNumberTxt");
-let changeColorTxt=document.getElementById("changeColorTxt");
+    if (changeColorTxt.value.toLowerCase()== 'red' || changeColorTxt.value.toLowerCase()=='blue'|| changeColorTxt.value.toLowerCase()=='purple' || changeColorTxt.value.toLowerCase()=='brown' ||changeColorTxt.value.toLowerCase()=='yellow')
+        { let boxNumberTxt=document.getElementById("boxNumberTxt");
+        let changeColorTxt=document.getElementById("changeColorTxt");
+            switch(boxNumberTxt.value){
+                case "1": 
+                box1.classList.add(changeColorTxt.value.toLowerCase());
+                console.log(box1.classList);
+                break;
+                case "2": 
+                box2.classList.add(changeColorTxt.value.toLowerCase());
+                    break;
+        
+                case "3":
+                    box3.classList.add(changeColorTxt.value.toLowerCase());
+                break;
+        
+                case "4":
+                    box4.classList.add(changeColorTxt.value.toLowerCase());
+                break;
+                case "5":
+                    box5.classList.add(changeColorTxt.value.toLowerCase());
+                break;
+        
+                case "6":
+                    box6.classList.add(changeColorTxt.value.toLowerCase());
+                break;
+                case "7":
+                    box7.classList.add(changeColorTxt.value.toLowerCase());
+                break;
+        
+                case "8":
+                    box8.classList.add(changeColorTxt.value.toLowerCase());
+                break;
+        
+        
+                //error handling for invalid number
+                default: alert("please enter a valid box number between 1-8");
+             }; 
+
+        } else //error handling for invalid color
+        {
+            alert ("Please enter valid color : red, blue, purple, brown or yellow");
+        }
     
-     switch(boxNumberTxt.value){
-        case "1": 
-        box1.classList.add(changeColorTxt.value.toLowerCase());
-        console.log(box1.classList);
-        break;
-        case "2": 
-        box2.classList.add(changeColorTxt.value.toLowerCase());
-            break;
-
-        case "3":
-            box3.classList.add(changeColorTxt.value.toLowerCase());
-        break;
-
-        case "4":
-            box4.classList.add(changeColorTxt.value.toLowerCase());
-        break;
-        case "5":
-            box5.classList.add(changeColorTxt.value.toLowerCase());
-        break;
-
-        case "6":
-            box6.classList.add(changeColorTxt.value.toLowerCase());
-        break;
-        case "7":
-            box7.classList.add(changeColorTxt.value.toLowerCase());
-        break;
-
-        case "8":
-            box8.classList.add(changeColorTxt.value.toLowerCase());
-        break;
-
-
-
-        default: alert("please enter a valid box number between 1-8");
-     }; 
 });
 
 resetColorsBtn.addEventListener ('click',function(){
